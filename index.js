@@ -8,6 +8,8 @@ require('./database/database.js');
 const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
+const session = require('express-session');
+const { v4: uuidv4 } = require('uuid');
 const cors = require('cors');
 
 
@@ -26,13 +28,33 @@ const mainRoutes = require('./routes/routes.js');
 // Application Setup
 const app = express();
 const PORT = process.env.PORT || 3000;
+const corsOptions = {
+    origin: '*',
+    optionsSuccessStatus: 200
+}
 
 
 
 
 // Middlewares setup.
 app.use(bodyParser.json());
-app.use(cors());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(cors(corsOptions));
+app.use(session({
+    secret: 'secret',
+    resave: false,
+    saveUninitialized: true
+}));
+
+app.use(function(req, res, next) {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header(
+        'Access-Control-Allow-Headers',
+        'Origin, X-Requested-With, Content-Type, Accept, Authorization'
+    );
+    res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, OPTIONS, DELETE, PATCH');
+    next();
+})
 
 
 

@@ -24,7 +24,7 @@ router.post('/create', createUser);
 
 
 // Login User Route.
-router.get('/login', loginUser);
+router.post('/login', loginUser);
 
 
 
