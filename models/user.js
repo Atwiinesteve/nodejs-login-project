@@ -1,7 +1,8 @@
 // Importing Modules
 const mongoose = require('mongoose');
+const express = require('express');
 const { v4: uuid } = require('uuid');
-const randomstring = require('randomstring');
+const random = require('randomstring');
 
 
 
@@ -10,33 +11,33 @@ const randomstring = require('randomstring');
 // Creating User Model.
 const userSchema = new mongoose.Schema({
     first_name: {
-        type: 'string',
+        type: 'String',
         required: true
     },
     last_name: {
-        type: 'string',
+        type: 'String',
         required: true
     },
     email: {
-        type: 'string',
+        type: 'String',
         required: true
     },
     password: {
-        type: 'string',
+        type: 'String',
         required: true
     },
     date_created: {
-        type: 'date',
+        type: 'Date',
         default: Date.now
     },
     user_id: {
-        type: 'string',
+        type: 'String',
         default: uuid
     },
     randomId: {
         type: 'string',
-        default: randomstring.generate({
-            length: 5,
+        default: random.generate({
+            length: 4,
             charset: 'alphanumeric'
         })
     }
@@ -46,10 +47,4 @@ const userSchema = new mongoose.Schema({
 
 
 // User Model.
-const User = mongoose.model('User', userSchema);
-
-
-
-
-// Exporting Model.
-module.exports = User;
+module.exports = mongoose.model('User', userSchema);

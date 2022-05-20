@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
+*,
+*::after,
+*::before {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.658), rgba(0, 0, 0, 0.712)), url('/images/taras-shypka-iFSvn82XfGo-unsplash.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+}
+
+.container {
+    background: white;
+}
+
+form {
+    padding: 0 1.9rem;
+}
+
+.center-div {
+    margin-top: 10%;
+}
+
+.font-weight-bold {
+    font-weight: bolder;
+}
+
+.form-text {
+    text-align: left;
+}
+
+input[type=email],
+input[type=password] {
+    padding: 0.8rem 1rem;
+    outline: none;
+    border-radius: 1px;
+}
+
+input[type=password] {
+    margin-top: 1rem;
+    margin-bottom: 10%;
+}
+
+.form-text-left {
+    text-align: left;
+    font-size: 1rem;
+}
+
+button.btn-success {
+    padding: 0.8rem 1rem;
+    outline: none;
+    border: none;
+    border-radius: 1px;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 1.2px;
+}

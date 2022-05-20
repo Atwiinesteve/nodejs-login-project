@@ -1,0 +1,22 @@
+<%- include('./partials/_header.ejs') %>
+
+    <div class="text-center  text-align-center center-div" id="login">
+        <div class="container border w-25 py-5">
+            <div class="title pb-5">
+                <h2 class="font-weight-bold">Login System</h2>
+                <span>Login for Existsing Users.</span>
+            </div>
+            <form action="#">
+                <div class="form-group">
+                    <input type="email" autocomplete="off" name="email" id="email" placeholder="Email" class="form-control">
+                    <div class="form-text-left">Provide Email Address.</div>
+                </div>
+                <div class="form-group">
+                    <input type="password" autocomple="off" name="password" id="password" placeholder="Password" class="form-control">
+                </div>
+                <button type="submit" class="btn btn-success">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <%- include('./partials/_footer.ejs') %>

@@ -1,12 +1,10 @@
-// Importing Modules
-const mongoose = require('mongoose');
-
-
-
-
 // Importing Configurations
 require('dotenv').config();
 
+
+
+// Importing Modules
+const mongoose = require('mongoose');
 
 
 
