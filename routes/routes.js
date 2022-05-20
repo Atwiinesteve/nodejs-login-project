@@ -5,7 +5,7 @@ const express = require('express');
 
 
 // Importing Custome Routes
-const { homeRoute } = require('../controllers/route_managers');
+const { homeRoute, createUser } = require('../controllers/route_managers.js');
 
 
 
@@ -17,6 +17,10 @@ const router = express.Router();
 
 // Home Route.
 router.get('/', homeRoute);
+
+
+// Create User Route.
+router.post('/create', createUser)
 
 
 

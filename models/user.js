@@ -21,7 +21,7 @@ const userSchema = new mongoose.Schema({
         type: 'string',
         required: true
     },
-    passowrd: {
+    password: {
         type: 'string',
         required: true
     },
@@ -31,22 +31,25 @@ const userSchema = new mongoose.Schema({
     },
     user_id: {
         type: 'string',
-        default: uuid.v4()
+        default: uuid
     },
-    randomId: randomstring.generate({
-        length: 5,
-        charset: 'alphanumeric'
-    })
+    randomId: {
+        type: 'string',
+        default: randomstring.generate({
+            length: 5,
+            charset: 'alphanumeric'
+        })
+    }
 });
 
 
 
 
 // User Model.
-const userModel = mongoose.model('User Model', userSchema);
+const User = mongoose.model('User', userSchema);
 
 
 
 
 // Exporting Model.
-module.exports = userModel;
+module.exports = User;
